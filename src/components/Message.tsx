@@ -1,15 +1,13 @@
-import { faker } from "@faker-js/faker";
-
-
-const Message = ({text}) => {
-    //BUG: the name regenerates on every new message. old message should retain their name 
-    const name = faker.person.fullName();
-    const time = faker.person.time()
+const Message = ({text, name, timestamp}) => {
 
     return <>
+    <div className="textContainer">
     <p className='message'>
-        {text} - {name}- [time]
+        {text} 
+        <br/>
+        {name} - {timestamp.toString()}
     </p>
+    </div>
     </>;
 
 }
